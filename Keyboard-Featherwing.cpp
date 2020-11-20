@@ -22,21 +22,22 @@ Adafruit_ILI9341 tft(TFT_CS, TFT_DC);
 
 BBQ10Keyboard keyboard;
 
-char read_next_key(void)
+char read_next_key()
 {
-  while (keyboard.keyCount() > 0)
+  while (keyboard.keyCount() == 0)
   {
-    const BBQ10Keyboard::KeyEvent key = keyboard.keyEvent();
-    if (key.state == BBQ10Keyboard::StatePress)
-    {
-      char c = key.key;
-      Serial.print("(Function:    ");
-      Serial.print(c);
-      Serial.print("    ");
-      Serial.print(c, HEX);
-      Serial.println(")");
-      return c;
-    }
+    ;
+  }
+  const BBQ10Keyboard::KeyEvent key = keyboard.keyEvent();
+  if (key.state == BBQ10Keyboard::StatePress)
+  {
+    char c = key.key;
+    Serial.print("(Function:    ");
+    Serial.print(c);
+    Serial.print("    ");
+    Serial.print(c, HEX);
+    Serial.println(")");
+    return c;
   }
 }
 
