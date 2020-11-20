@@ -24,10 +24,9 @@ BBQ10Keyboard keyboard;
 
 char read_next_key(void)
 {
-  const BBQ10Keyboard::KeyEvent key = keyboard.keyEvent();
-  while (keyboard.keyCount() == 0)
+  while (keyboard.keyCount() > 0)
   {
-
+    const BBQ10Keyboard::KeyEvent key = keyboard.keyEvent();
     if (key.state == BBQ10Keyboard::StatePress)
     {
       char c = key.key;
@@ -43,11 +42,11 @@ char read_next_key(void)
 
 void button_1()
 {
-    char key_pressed = read_next_key();
-    Serial.print("Button 1 Function   ");
-    Serial.print(key_pressed);
-    Serial.print("    ");
-    Serial.println(key_pressed, HEX);
+  char key_pressed = read_next_key();
+  Serial.print("Button 1 Function:    ");
+  Serial.print(key_pressed);
+  Serial.print("    ");
+  Serial.println(key_pressed, HEX);
 }
 
 void setup()
@@ -82,7 +81,7 @@ void loop()
     //These are the four buttons on the top row
   case 0x06: // Button 1
     Serial.println("Button 1 Pressed");
-    button_1(); //Drops into function 
+    button_1(); //Drops into function
     break;
   case 0x11: // Button 2
     Serial.println("Button 2 Pressed");
