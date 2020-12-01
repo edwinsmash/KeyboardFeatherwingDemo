@@ -11,6 +11,10 @@ Received Data:
 ===START DISPLAY===
 ===END DISPLAY===
 
+(Loops appropriately)
+
+
+
 Serial Output When Display is refreshed:
 
 ===START TRANSMISSION===
@@ -18,3 +22,5 @@ Done Receiving.
 Length of Received Data: 3
 Received Data: 
 0    C1
+
+(The arduino crashes at this point and needs to be reset.)
