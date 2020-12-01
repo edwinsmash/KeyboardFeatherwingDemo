@@ -45,7 +45,8 @@ void receiveEvent(int len)
   display.setTextSize(2);
   display.setCursor(24, 14);
   display.print("DATA");
-  display.display();
+  //This is the line that causes it to fail.
+  //display.display();
   Serial.println("===END DISPLAY===");
   delay(1000);
 }

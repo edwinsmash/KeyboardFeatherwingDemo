@@ -1,0 +1,20 @@
+Expected Output when Display is not refreshed:
+
+===START TRANSMISSION===
+Done Receiving.
+Length of Received Data: 3
+Received Data: 
+0    C1
+1    46
+2    50
+===END TRANSMISSION===
+===START DISPLAY===
+===END DISPLAY===
+
+Serial Output When Display is refreshed:
+
+===START TRANSMISSION===
+Done Receiving.
+Length of Received Data: 3
+Received Data: 
+0    C1
