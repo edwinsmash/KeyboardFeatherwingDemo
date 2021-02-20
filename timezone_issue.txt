@@ -22,18 +22,23 @@ long new_timezone_offset = 0;
 
 Serial.print("timezone_string: ");
 Serial.println(timezone_string);
+
 Serial.print("tz_negative_flag: ");
 Serial.println(tz_negative_flag);
+
 //In Minutes
 new_timezone_offset = timezone_string.toInt(); //THIS SHOULD BE ABLE TO HANDLE VALUE -1440 to 1440
 if (tz_negative_flag)
-{
-new_timezone_offset = new_timezone_offset * -1; //MAKE THE NUMBER NEGATIVE IF THAT'S WHAT WAS ENTERED ON THE KEYBOARD
-}
+  {
+  new_timezone_offset = new_timezone_offset * -1; //MAKE THE NUMBER NEGATIVE IF THAT'S WHAT WAS ENTERED ON THE KEYBOARD
+  }
+  
 Serial.print("New Timezone Offset in Minutes: ");
 Serial.println(new_timezone_offset);
+
 Serial.print("New Timezone Offset in HEX: ");
 Serial.println(new_timezone_offset, HEX);
+
 Serial.print("New Timezone Offset in BIN: ");
 Serial.println(new_timezone_offset, BIN);
 
